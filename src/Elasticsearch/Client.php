@@ -1025,7 +1025,6 @@ class Client
     {
         $scrollID = $this->extractArgument($params, 'scroll_id');
         $body = $this->extractArgument($params, 'body');
-        $scroll = $this->extractArgument($params, 'scroll');
 
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
@@ -1033,7 +1032,6 @@ class Client
         /** @var \Elasticsearch\Endpoints\Scroll $endpoint */
         $endpoint = $endpointBuilder('Scroll');
         $endpoint->setScrollId($scrollID)
-                 ->setScroll($scroll)
                  ->setBody($body);
         $endpoint->setParams($params);
 
